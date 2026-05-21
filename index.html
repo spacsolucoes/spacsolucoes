@@ -166,12 +166,41 @@
       border-radius: 20px;
       transition: .4s;
       border: 2px solid #111;
+      cursor: pointer;
     }
 
     .galeria img:hover {
       transform: scale(1.03);
       border-color: #00ff88;
       box-shadow: 0 0 25px rgba(0,255,136,.25);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      background: rgba(0,0,0,.92);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal img {
+      max-width: 95%;
+      max-height: 95%;
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(0,255,136,.25);
+    }
+
+    .fechar {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      color: #fff;
+      font-size: 42px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     .contact {
@@ -224,8 +253,12 @@
         font-size: 30px;
       }
 
-      .galeria img {
-        height: 230px;
+      .galeria img { height: 230px; }
+
+      .fechar {
+        top: 15px;
+        right: 22px;
+        font-size: 36px;
       }
     }
   </style>
@@ -304,16 +337,16 @@
     </div>
 
     <div class="galeria">
-      <img src="imagens/foto1.jpeg">
-      <img src="imagens/foto2.jpeg">
-      <img src="imagens/foto3.jpeg">
-      <img src="imagens/foto4.jpeg">
-      <img src="imagens/foto5.png">
-      <img src="imagens/foto6.jpeg">
-      <img src="imagens/foto7.jpeg">
-      <img src="imagens/foto8.jpeg">
-      <img src="imagens/foto9.jpeg">
-      <img src="imagens/foto10.jpeg">
+      <img src="imagens/foto1.jpeg" onclick="abrirImagem(this.src)">
+      <img src="imagens/foto2.jpeg" onclick="abrirImagem(this.src)">
+      <img src="imagens/foto3.jpeg" onclick="abrirImagem(this.src)">
+      <img src="imagens/foto4.jpeg" onclick="abrirImagem(this.src)">
+      <img src="imagens/foto5.png" onclick="abrirImagem(this.src)">
+      <img src="imagens/foto6.jpeg" onclick="abrirImagem(this.src)">
+      <img src="imagens/foto7.jpeg" onclick="abrirImagem(this.src)">
+      <img src="imagens/foto8.jpeg" onclick="abrirImagem(this.src)">
+      <img src="imagens/foto9.jpeg" onclick="abrirImagem(this.src)">
+      <img src="imagens/foto10.jpeg" onclick="abrirImagem(this.src)">
     </div>
   </section>
 
@@ -333,6 +366,22 @@
   <a class="whatsapp" href="https://wa.me/5522999495282" target="_blank">
     WhatsApp
   </a>
+
+  <div id="modal" class="modal" onclick="fecharImagem()">
+    <span class="fechar">&times;</span>
+    <img id="imagem-ampliada">
+  </div>
+
+  <script>
+    function abrirImagem(src) {
+      document.getElementById("modal").style.display = "flex";
+      document.getElementById("imagem-ampliada").src = src;
+    }
+
+    function fecharImagem() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
