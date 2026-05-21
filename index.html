@@ -6,11 +6,7 @@
   <title>SPAC Soluções Prediais</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -23,7 +19,7 @@
       min-height: 100vh;
       background:
         linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
-        url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80");
+        url("imagens/FOTOS TORRE PINTADA SPAC.png");
       background-size: cover;
       background-position: center;
       display: flex;
@@ -33,9 +29,7 @@
       padding: 30px;
     }
 
-    .hero {
-      max-width: 900px;
-    }
+    .hero { max-width: 900px; }
 
     .logo-text {
       color: #00ff88;
@@ -51,9 +45,7 @@
       margin-bottom: 25px;
     }
 
-    h1 span {
-      color: #00ff88;
-    }
+    h1 span { color: #00ff88; }
 
     .hero p {
       font-size: 22px;
@@ -77,9 +69,7 @@
       box-shadow: 0 0 25px #00ff88;
     }
 
-    section {
-      padding: 90px 8%;
-    }
+    section { padding: 90px 8%; }
 
     .section-title {
       text-align: center;
@@ -144,7 +134,7 @@
     .highlight {
       background:
         linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.9)),
-        url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80");
+        url("imagens/FOTO-10.jpeg");
       background-size: cover;
       background-position: center;
       text-align: center;
@@ -161,6 +151,27 @@
       margin: auto;
       color: #ddd;
       font-size: 20px;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 20px;
+      transition: .4s;
+      border: 2px solid #111;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.03);
+      border-color: #00ff88;
+      box-shadow: 0 0 25px rgba(0,255,136,.25);
     }
 
     .contact {
@@ -203,22 +214,18 @@
     }
 
     @media (max-width: 700px) {
-      h1 {
-        font-size: 38px;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
-
-      section {
-        padding: 70px 6%;
-      }
+      h1 { font-size: 38px; }
+      .hero p { font-size: 18px; }
+      section { padding: 70px 6%; }
 
       .highlight h2,
       .contact h2,
       .section-title h2 {
         font-size: 30px;
+      }
+
+      .galeria img {
+        height: 230px;
       }
     }
   </style>
@@ -288,6 +295,25 @@
       Trabalhamos com foco em planejamento, prevenção de riscos,
       produtividade e excelência na entrega dos serviços.
     </p>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>Galeria de Serviços</h2>
+      <p>Alguns registros reais das atividades da SPAC</p>
+    </div>
+
+    <div class="galeria">
+      <img src="imagens/FOTO-1.jpeg">
+      <img src="imagens/FOTO-4.jpeg">
+      <img src="imagens/FOTO-5.jpeg">
+      <img src="imagens/FOTO-07.jpeg">
+      <img src="imagens/FOTO-08.jpeg">
+      <img src="imagens/FOTO-10.jpeg">
+      <img src="imagens/FOTO-12.jpeg">
+      <img src="imagens/FOTO-14.jpeg">
+      <img src="imagens/WhatsApp Image 2026-05-20 at 20.03.30.jpeg">
+    </div>
   </section>
 
   <section class="contact">
