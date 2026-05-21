@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -16,22 +17,27 @@
 
 body{
     font-family:Arial, Helvetica, sans-serif;
+
     background:
     linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.92)),
     url("imagens/foto5.png");
+
     background-size:cover;
     background-position:center;
     background-attachment:fixed;
+
     color:white;
     line-height:1.6;
 }
 
 header{
     min-height:100vh;
+
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
+
     padding:30px;
 }
 
@@ -102,6 +108,7 @@ section{
 .about{
     background:rgba(11,11,11,.82);
     text-align:center;
+    backdrop-filter:blur(3px);
 }
 
 .about p{
@@ -124,6 +131,7 @@ section{
     padding:40px 25px;
     text-align:center;
     transition:.3s;
+    backdrop-filter:blur(5px);
 }
 
 .card:hover{
@@ -146,6 +154,7 @@ section{
 .highlight{
     background:rgba(0,0,0,.82);
     text-align:center;
+    backdrop-filter:blur(3px);
 }
 
 .highlight h2{
@@ -215,6 +224,7 @@ section{
 .contact{
     text-align:center;
     background:rgba(8,8,8,.85);
+    backdrop-filter:blur(3px);
 }
 
 .contact h2{
@@ -236,18 +246,43 @@ footer{
     color:#777;
 }
 
+/* WHATSAPP */
+
 .whatsapp{
+
     position:fixed;
-    right:22px;
-    bottom:22px;
-    background:#00ff88;
-    color:black;
-    padding:15px 20px;
-    border-radius:50px;
-    font-weight:bold;
-    text-decoration:none;
-    box-shadow:0 0 20px rgba(0,255,136,.4);
-    z-index:99;
+
+    right:18px;
+    bottom:18px;
+
+    width:65px;
+    height:65px;
+
+    background:#25D366;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 0 20px rgba(37,211,102,.45);
+
+    z-index:999;
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+
+    transform:scale(1.08);
+
+}
+
+.whatsapp img{
+
+    width:38px;
+    height:38px;
 }
 
 @media(max-width:700px){
@@ -335,32 +370,44 @@ eficientes e modernas.
 
 <div class="card">
 <h3>Pintura Predial</h3>
-<p>Execução de pintura em fachadas com acabamento profissional e segurança.</p>
+<p>
+Execução de pintura em fachadas com acabamento profissional e segurança.
+</p>
 </div>
 
 <div class="card">
 <h3>Pintura em Altura</h3>
-<p>Serviços realizados com técnicas de acesso por cordas e equipe especializada.</p>
+<p>
+Serviços realizados com técnicas de acesso por cordas e equipe especializada.
+</p>
 </div>
 
 <div class="card">
 <h3>Reparo em Fachadas</h3>
-<p>Correções, recuperação e manutenção de áreas externas de edificações.</p>
+<p>
+Correções, recuperação e manutenção de áreas externas de edificações.
+</p>
 </div>
 
 <div class="card">
 <h3>Inspeção de Pastilhas</h3>
-<p>Verificação técnica de revestimentos, identificação de falhas e riscos.</p>
+<p>
+Verificação técnica de revestimentos, identificação de falhas e riscos.
+</p>
 </div>
 
 <div class="card">
 <h3>Instalação de Área Técnica em Fachada</h3>
-<p>Instalação segura e planejada de estruturas técnicas em fachadas prediais.</p>
+<p>
+Instalação segura e planejada de estruturas técnicas em fachadas prediais.
+</p>
 </div>
 
 <div class="card">
 <h3>Limpeza de Placas Solares</h3>
-<p>Limpeza técnica especializada para maior eficiência e desempenho dos painéis solares.</p>
+<p>
+Limpeza técnica especializada para maior eficiência e desempenho dos painéis solares.
+</p>
 </div>
 
 </div>
@@ -425,7 +472,9 @@ Chamar no WhatsApp
 <a class="whatsapp"
 href="https://wa.me/5522999495282"
 target="_blank">
-WhatsApp
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+
 </a>
 
 <div id="modal" class="modal" onclick="fecharImagem()">
@@ -441,15 +490,21 @@ WhatsApp
 <script>
 
 function abrirImagem(src){
-    document.getElementById("modal").style.display="flex";
-    document.getElementById("imagem-ampliada").src=src;
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("imagem-ampliada").src=src;
+
 }
 
 function fecharImagem(){
-    document.getElementById("modal").style.display="none";
+
+document.getElementById("modal").style.display="none";
+
 }
 
 </script>
 
 </body>
 </html>
+```
