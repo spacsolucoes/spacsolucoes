@@ -7,7 +7,6 @@
 <title>SPAC Soluções Prediais</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -16,27 +15,22 @@
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-
     background:
     linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.92)),
     url("imagens/foto5.png");
-
     background-size:cover;
     background-position:center;
     background-attachment:fixed;
-
     color:white;
     line-height:1.6;
 }
 
 header{
     min-height:100vh;
-
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-
     padding:30px;
 }
 
@@ -104,13 +98,18 @@ section{
     font-size:18px;
 }
 
-.about{
-    background:rgba(11,11,11,.82);
-    text-align:center;
+.about,
+.highlight,
+.video-section,
+.contact{
+    background:rgba(0,0,0,.82);
     backdrop-filter:blur(3px);
+    text-align:center;
 }
 
-.about p{
+.about p,
+.highlight p,
+.contact p{
     max-width:850px;
     margin:auto;
     font-size:20px;
@@ -150,23 +149,32 @@ section{
     font-size:18px;
 }
 
-.highlight{
-    background:rgba(0,0,0,.82);
-    text-align:center;
-    backdrop-filter:blur(3px);
-}
-
-.highlight h2{
+.highlight h2,
+.contact h2{
     font-size:42px;
     color:#00ff88;
     margin-bottom:20px;
 }
 
-.highlight p{
-    max-width:850px;
+.video-container{
+    position:relative;
+    width:100%;
+    max-width:1100px;
     margin:auto;
-    font-size:20px;
-    color:#ddd;
+    padding-bottom:56.25%;
+    height:0;
+    overflow:hidden;
+    border-radius:25px;
+    box-shadow:0 0 35px rgba(0,255,136,.18);
+}
+
+.video-container iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border:none;
 }
 
 .galeria{
@@ -220,22 +228,8 @@ section{
     cursor:pointer;
 }
 
-.contact{
-    text-align:center;
-    background:rgba(8,8,8,.85);
-    backdrop-filter:blur(3px);
-}
-
-.contact h2{
-    font-size:42px;
-    color:#00ff88;
-    margin-bottom:20px;
-}
-
 .contact p{
-    color:#ccc;
     margin-bottom:30px;
-    font-size:20px;
 }
 
 footer{
@@ -245,47 +239,32 @@ footer{
     color:#777;
 }
 
-/* WHATSAPP */
-
 .whatsapp{
-
     position:fixed;
-
     right:18px;
     bottom:18px;
-
     width:65px;
     height:65px;
-
     background:#25D366;
-
     border-radius:50%;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     box-shadow:0 0 20px rgba(37,211,102,.45);
-
     z-index:999;
-
     transition:.3s;
 }
 
 .whatsapp:hover{
-
     transform:scale(1.08);
-
 }
 
 .whatsapp img{
-
     width:38px;
     height:38px;
 }
 
 @media(max-width:700px){
-
     h1{
         font-size:42px;
     }
@@ -307,20 +286,26 @@ footer{
     .galeria img{
         height:230px;
     }
-}
 
+    .whatsapp{
+        width:55px;
+        height:55px;
+    }
+
+    .whatsapp img{
+        width:32px;
+        height:32px;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-
 <div class="hero">
 
-<div class="logo-text">
-SPAC SOLUÇÕES PREDIAIS
-</div>
+<div class="logo-text">SPAC SOLUÇÕES PREDIAIS</div>
 
 <h1>
 Serviços em altura com
@@ -333,9 +318,7 @@ pintura predial, reparo em fachadas
 e inspeção de pastilhas.
 </p>
 
-<a class="btn"
-href="https://wa.me/5522999495282"
-target="_blank">
+<a class="btn" href="https://wa.me/5522999495282" target="_blank">
 Solicitar orçamento
 </a>
 
@@ -343,7 +326,6 @@ Solicitar orçamento
 </header>
 
 <section class="about">
-
 <div class="section-title">
 <h2>Quem Somos</h2>
 <p>Profissionalismo em cada detalhe</p>
@@ -355,11 +337,9 @@ manutenção predial e acesso por cordas,
 oferecendo soluções seguras,
 eficientes e modernas.
 </p>
-
 </section>
 
 <section>
-
 <div class="section-title">
 <h2>Nossos Serviços</h2>
 <p>Soluções completas para fachadas e estruturas prediais</p>
@@ -369,69 +349,68 @@ eficientes e modernas.
 
 <div class="card">
 <h3>Pintura Predial</h3>
-<p>
-Execução de pintura em fachadas com acabamento profissional e segurança.
-</p>
+<p>Execução de pintura em fachadas com acabamento profissional e segurança.</p>
 </div>
 
 <div class="card">
 <h3>Pintura em Altura</h3>
-<p>
-Serviços realizados com técnicas de acesso por cordas e equipe especializada.
-</p>
+<p>Serviços realizados com técnicas de acesso por cordas e equipe especializada.</p>
 </div>
 
 <div class="card">
 <h3>Reparo em Fachadas</h3>
-<p>
-Correções, recuperação e manutenção de áreas externas de edificações.
-</p>
+<p>Correções, recuperação e manutenção de áreas externas de edificações.</p>
 </div>
 
 <div class="card">
 <h3>Inspeção de Pastilhas</h3>
-<p>
-Verificação técnica de revestimentos, identificação de falhas e riscos.
-</p>
+<p>Verificação técnica de revestimentos, identificação de falhas e riscos.</p>
 </div>
 
 <div class="card">
 <h3>Instalação de Área Técnica em Fachada</h3>
-<p>
-Instalação segura e planejada de estruturas técnicas em fachadas prediais.
-</p>
+<p>Instalação segura e planejada de estruturas técnicas em fachadas prediais.</p>
 </div>
 
 <div class="card">
 <h3>Limpeza de Placas Solares</h3>
-<p>
-Limpeza técnica especializada para maior eficiência e desempenho dos painéis solares.
-</p>
+<p>Limpeza técnica especializada para maior eficiência e desempenho dos painéis solares.</p>
 </div>
 
 </div>
 </section>
 
 <section class="highlight">
-
 <h2>Segurança em primeiro lugar</h2>
-
 <p>
 Trabalhamos com foco em planejamento,
 prevenção de riscos, produtividade e excelência.
 </p>
+</section>
 
+<section class="video-section">
+<div class="section-title">
+<h2>SPAC em Ação</h2>
+<p>Conheça nossos serviços em campo</p>
+</div>
+
+<div class="video-container">
+<iframe
+src="https://www.youtube.com/embed/7DtNOOms29A?si=UY5OcyX723ybbJhn"
+title="SPAC Soluções Prediais"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+</div>
 </section>
 
 <section>
-
 <div class="section-title">
 <h2>Galeria de Serviços</h2>
 <p>Alguns registros reais das atividades da SPAC</p>
 </div>
 
 <div class="galeria">
-
 <img src="imagens/foto1.jpeg" onclick="abrirImagem(this.src)">
 <img src="imagens/foto2.jpeg" onclick="abrirImagem(this.src)">
 <img src="imagens/foto3.jpeg" onclick="abrirImagem(this.src)">
@@ -442,68 +421,44 @@ prevenção de riscos, produtividade e excelência.
 <img src="imagens/foto8.jpeg" onclick="abrirImagem(this.src)">
 <img src="imagens/foto9.jpeg" onclick="abrirImagem(this.src)">
 <img src="imagens/foto10.jpeg" onclick="abrirImagem(this.src)">
-
 </div>
-
 </section>
 
 <section class="contact">
-
 <h2>Solicite seu orçamento</h2>
-
 <p>
 Fale com a SPAC Soluções Prediais
 e receba atendimento personalizado.
 </p>
 
-<a class="btn"
-href="https://wa.me/5522999495282"
-target="_blank">
+<a class="btn" href="https://wa.me/5522999495282" target="_blank">
 Chamar no WhatsApp
 </a>
-
 </section>
 
 <footer>
 © 2026 SPAC Soluções Prediais
 </footer>
 
-<a class="whatsapp"
-href="https://wa.me/5522999495282"
-target="_blank">
-
+<a class="whatsapp" href="https://wa.me/5522999495282" target="_blank">
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-
 </a>
 
 <div id="modal" class="modal" onclick="fecharImagem()">
-
-<span class="fechar">
-&times;
-</span>
-
+<span class="fechar">&times;</span>
 <img id="imagem-ampliada">
-
 </div>
 
 <script>
-
 function abrirImagem(src){
-
-document.getElementById("modal").style.display="flex";
-
-document.getElementById("imagem-ampliada").src=src;
-
+    document.getElementById("modal").style.display="flex";
+    document.getElementById("imagem-ampliada").src=src;
 }
 
 function fecharImagem(){
-
-document.getElementById("modal").style.display="none";
-
+    document.getElementById("modal").style.display="none";
 }
-
 </script>
 
 </body>
 </html>
-```
