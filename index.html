@@ -7,6 +7,7 @@
 <title>SPAC Soluções Prediais</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -15,12 +16,15 @@
 
 body{
     font-family:Arial, Helvetica, sans-serif;
+
     background:
     linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.92)),
     url("imagens/foto5.png");
+
     background-size:cover;
     background-position:center;
     background-attachment:fixed;
+
     color:white;
     line-height:1.6;
 }
@@ -156,7 +160,7 @@ section{
     margin-bottom:20px;
 }
 
-/* CARROSSEL DE VÍDEOS */
+/* VÍDEOS */
 
 .video-carousel{
     display:flex;
@@ -164,22 +168,6 @@ section{
     overflow-x:auto;
     scroll-snap-type:x mandatory;
     padding:10px 0 25px;
-    scrollbar-width:thin;
-    scrollbar-color:#00ff88 #111;
-}
-
-.video-carousel::-webkit-scrollbar{
-    height:8px;
-}
-
-.video-carousel::-webkit-scrollbar-track{
-    background:#111;
-    border-radius:20px;
-}
-
-.video-carousel::-webkit-scrollbar-thumb{
-    background:#00ff88;
-    border-radius:20px;
 }
 
 .video-slide{
@@ -214,6 +202,8 @@ section{
     font-size:15px;
 }
 
+/* GALERIA */
+
 .galeria{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -235,6 +225,8 @@ section{
     border-color:#00ff88;
     box-shadow:0 0 25px rgba(0,255,136,.25);
 }
+
+/* MODAL */
 
 .modal{
     display:none;
@@ -276,32 +268,56 @@ footer{
     color:#777;
 }
 
-.whatsapp{
+/* REDES SOCIAIS */
+
+.social-icons{
     position:fixed;
     right:18px;
     bottom:18px;
+
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+
+    z-index:999;
+}
+
+.social-icons a{
     width:65px;
     height:65px;
-    background:#25D366;
+
     border-radius:50%;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    box-shadow:0 0 20px rgba(37,211,102,.45);
-    z-index:999;
+
+    box-shadow:0 0 20px rgba(0,0,0,.35);
+
     transition:.3s;
 }
 
-.whatsapp:hover{
+.social-icons a:hover{
     transform:scale(1.08);
 }
 
-.whatsapp img{
-    width:38px;
-    height:38px;
+.social-icons img{
+    width:34px;
+    height:34px;
 }
 
+.whatsapp-btn{
+    background:#25D366;
+}
+
+.instagram-btn{
+    background:linear-gradient(45deg,#833AB4,#E1306C,#F77737);
+}
+
+/* RESPONSIVO */
+
 @media(max-width:700px){
+
     h1{
         font-size:42px;
     }
@@ -324,29 +340,33 @@ footer{
         height:230px;
     }
 
-    .whatsapp{
+    .social-icons a{
         width:55px;
         height:55px;
     }
 
-    .whatsapp img{
-        width:32px;
-        height:32px;
+    .social-icons img{
+        width:30px;
+        height:30px;
     }
 
     .video-hint{
         font-size:14px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
+
 <div class="hero">
 
-<div class="logo-text">SPAC SOLUÇÕES PREDIAIS</div>
+<div class="logo-text">
+SPAC SOLUÇÕES PREDIAIS
+</div>
 
 <h1>
 Serviços em altura com
@@ -359,7 +379,9 @@ pintura predial, reparo em fachadas
 e inspeção de pastilhas.
 </p>
 
-<a class="btn" href="https://wa.me/5522999495282" target="_blank">
+<a class="btn"
+href="https://wa.me/5522999495282"
+target="_blank">
 Solicitar orçamento
 </a>
 
@@ -367,6 +389,7 @@ Solicitar orçamento
 </header>
 
 <section class="about">
+
 <div class="section-title">
 <h2>Quem Somos</h2>
 <p>Profissionalismo em cada detalhe</p>
@@ -378,9 +401,11 @@ manutenção predial e acesso por cordas,
 oferecendo soluções seguras,
 eficientes e modernas.
 </p>
+
 </section>
 
 <section>
+
 <div class="section-title">
 <h2>Nossos Serviços</h2>
 <p>Soluções completas para fachadas e estruturas prediais</p>
@@ -422,14 +447,18 @@ eficientes e modernas.
 </section>
 
 <section class="highlight">
+
 <h2>Segurança em primeiro lugar</h2>
+
 <p>
 Trabalhamos com foco em planejamento,
 prevenção de riscos, produtividade e excelência.
 </p>
+
 </section>
 
 <section class="video-section">
+
 <div class="section-title">
 <h2>SPAC em Ação</h2>
 <p>Arraste para o lado e conheça nossos vídeos</p>
@@ -439,39 +468,47 @@ prevenção de riscos, produtividade e excelência.
 
 <div class="video-slide">
 <div class="video-container">
+
 <iframe
 src="https://www.youtube.com/embed/7DtNOOms29A?si=UY5OcyX723ybbJhn"
 title="SPAC Soluções Prediais - Vídeo 1"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen>
 </iframe>
+
 </div>
 </div>
 
 <div class="video-slide">
 <div class="video-container">
+
 <iframe
 src="https://www.youtube.com/embed/hF9a2cbF9ts?si=jxQCRnj7L41a3Yuy"
 title="SPAC Soluções Prediais - Vídeo 2"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen>
 </iframe>
+
 </div>
 </div>
 
 </div>
 
-<p class="video-hint">No celular, arraste o vídeo para o lado para ver o próximo.</p>
+<p class="video-hint">
+No celular, arraste o vídeo para o lado para ver o próximo.
+</p>
 
 </section>
 
 <section>
+
 <div class="section-title">
 <h2>Galeria de Serviços</h2>
 <p>Alguns registros reais das atividades da SPAC</p>
 </div>
 
 <div class="galeria">
+
 <img src="imagens/foto1.jpeg" onclick="abrirImagem(this.src)">
 <img src="imagens/foto2.jpeg" onclick="abrirImagem(this.src)">
 <img src="imagens/foto3.jpeg" onclick="abrirImagem(this.src)">
@@ -482,43 +519,82 @@ allowfullscreen>
 <img src="imagens/foto8.jpeg" onclick="abrirImagem(this.src)">
 <img src="imagens/foto9.jpeg" onclick="abrirImagem(this.src)">
 <img src="imagens/foto10.jpeg" onclick="abrirImagem(this.src)">
+
 </div>
+
 </section>
 
 <section class="contact">
+
 <h2>Solicite seu orçamento</h2>
+
 <p>
 Fale com a SPAC Soluções Prediais
 e receba atendimento personalizado.
 </p>
 
-<a class="btn" href="https://wa.me/5522999495282" target="_blank">
+<a class="btn"
+href="https://wa.me/5522999495282"
+target="_blank">
 Chamar no WhatsApp
 </a>
+
 </section>
 
 <footer>
 © 2026 SPAC Soluções Prediais
 </footer>
 
-<a class="whatsapp" href="https://wa.me/5522999495282" target="_blank">
+<!-- REDES SOCIAIS -->
+
+<div class="social-icons">
+
+<a class="whatsapp-btn"
+href="https://wa.me/5522999495282"
+target="_blank">
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+
 </a>
 
+<a class="instagram-btn"
+href="https://www.instagram.com/spacsolucoes/"
+target="_blank">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+
+</a>
+
+</div>
+
+<!-- MODAL -->
+
 <div id="modal" class="modal" onclick="fecharImagem()">
-<span class="fechar">&times;</span>
+
+<span class="fechar">
+&times;
+</span>
+
 <img id="imagem-ampliada">
+
 </div>
 
 <script>
+
 function abrirImagem(src){
-    document.getElementById("modal").style.display="flex";
-    document.getElementById("imagem-ampliada").src=src;
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("imagem-ampliada").src=src;
+
 }
 
 function fecharImagem(){
-    document.getElementById("modal").style.display="none";
+
+document.getElementById("modal").style.display="none";
+
 }
+
 </script>
 
 </body>
