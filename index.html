@@ -130,6 +130,7 @@ section{
     text-align:center;
     transition:.3s;
     backdrop-filter:blur(5px);
+    cursor:pointer;
 }
 
 .card:hover{
@@ -222,7 +223,7 @@ section{
     box-shadow:0 0 25px rgba(0,255,136,.25);
 }
 
-/* MODAL */
+/* MODAL IMAGEM */
 
 .modal{
     display:none;
@@ -250,6 +251,51 @@ section{
     right:35px;
     color:white;
     font-size:45px;
+    cursor:pointer;
+}
+
+/* MODAL SERVIÇO */
+
+.modal-servico{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    inset:0;
+    background:rgba(0,0,0,.94);
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+
+.conteudo-servico{
+    background:rgba(15,15,15,.96);
+    border:1px solid #00ff88;
+    border-radius:25px;
+    max-width:900px;
+    max-height:90vh;
+    overflow-y:auto;
+    padding:40px;
+    text-align:left;
+    box-shadow:0 0 35px rgba(0,255,136,.25);
+}
+
+.conteudo-servico h2{
+    color:#00ff88;
+    font-size:36px;
+    margin-bottom:25px;
+    text-align:center;
+}
+
+.conteudo-servico p{
+    color:#ddd;
+    font-size:18px;
+    margin-bottom:18px;
+}
+
+.fechar-servico{
+    float:right;
+    font-size:38px;
+    color:white;
     cursor:pointer;
 }
 
@@ -342,6 +388,18 @@ footer{
     .video-hint{
         font-size:14px;
     }
+
+    .conteudo-servico{
+        padding:28px;
+    }
+
+    .conteudo-servico h2{
+        font-size:30px;
+    }
+
+    .conteudo-servico p{
+        font-size:16px;
+    }
 }
 </style>
 </head>
@@ -393,7 +451,7 @@ eficientes e modernas.
 
 <div class="services">
 
-<div class="card">
+<div class="card" onclick="abrirServicoPintura()">
 <h3>Pintura Predial</h3>
 <p>Execução de pintura em fachadas com acabamento profissional e segurança.</p>
 </div>
@@ -536,6 +594,27 @@ Chamar no WhatsApp
 <img id="imagem-ampliada">
 </div>
 
+<div id="modal-pintura" class="modal-servico">
+<div class="conteudo-servico">
+<span class="fechar-servico" onclick="fecharServicoPintura()">&times;</span>
+
+<h2>Pintura Predial</h2>
+
+<p>
+A pintura predial é fundamental para a proteção, conservação e valorização do imóvel. Além de renovar a estética da edificação, a pintura funciona como uma camada de proteção contra sol, chuva, umidade e desgaste natural do tempo.
+</p>
+
+<p>
+Uma pintura bem executada transmite modernidade, cuidado e credibilidade, deixando o ambiente mais agradável e sofisticado. Também contribui para a preservação das superfícies, prevenindo rachaduras, infiltrações e deteriorações estruturais.
+</p>
+
+<p>
+Manter a pintura em dia valoriza o patrimônio, melhora a aparência do prédio e demonstra compromisso com qualidade, segurança e conservação. Seja em áreas internas ou externas, investir em pintura predial é investir na durabilidade e na boa imagem do seu imóvel.
+</p>
+
+</div>
+</div>
+
 <script>
 function abrirImagem(src){
     document.getElementById("modal").style.display="flex";
@@ -544,6 +623,14 @@ function abrirImagem(src){
 
 function fecharImagem(){
     document.getElementById("modal").style.display="none";
+}
+
+function abrirServicoPintura(){
+    document.getElementById("modal-pintura").style.display="flex";
+}
+
+function fecharServicoPintura(){
+    document.getElementById("modal-pintura").style.display="none";
 }
 </script>
 
