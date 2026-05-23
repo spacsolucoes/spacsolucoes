@@ -1,638 +1,254 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SPAC Soluções Prediais</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:
-    linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.92)),
-    url("imagens/foto5.png");
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-    color:white;
-    line-height:1.6;
-}
-
-header{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:30px;
-}
-
-.hero{
-    max-width:900px;
-}
-
-.logo-text{
-    color:#00ff88;
-    font-size:18px;
-    letter-spacing:5px;
-    margin-bottom:20px;
-    font-weight:bold;
-}
-
-h1{
-    font-size:64px;
-    line-height:1.1;
-    margin-bottom:25px;
-}
-
-h1 span{
-    color:#00ff88;
-}
-
-.hero p{
-    font-size:24px;
-    color:#ddd;
-    margin-bottom:40px;
-}
-
-.btn{
-    display:inline-block;
-    background:#00ff88;
-    color:black;
-    padding:18px 35px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 25px #00ff88;
-}
-
-section{
-    padding:90px 8%;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:55px;
-}
-
-.section-title h2{
-    font-size:42px;
-    color:#00ff88;
-    margin-bottom:10px;
-}
-
-.section-title p{
-    color:#aaa;
-    font-size:18px;
-}
-
-.about,
-.highlight,
-.video-section,
-.contact{
-    background:rgba(0,0,0,.82);
-    backdrop-filter:blur(3px);
-    text-align:center;
-}
-
-.about p,
-.highlight p,
-.contact p{
-    max-width:850px;
-    margin:auto;
-    font-size:20px;
-    color:#ccc;
-}
-
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:rgba(17,17,17,.88);
-    border:1px solid #222;
-    border-radius:25px;
-    padding:40px 25px;
-    text-align:center;
-    transition:.3s;
-    backdrop-filter:blur(5px);
-    cursor:pointer;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    border-color:#00ff88;
-    box-shadow:0 0 25px rgba(0,255,136,.18);
-}
-
-.card h3{
-    color:#00ff88;
-    font-size:22px;
-    margin-bottom:20px;
-}
-
-.card p{
-    color:#ccc;
-    font-size:18px;
-}
-
-.highlight h2,
-.contact h2{
-    font-size:42px;
-    color:#00ff88;
-    margin-bottom:20px;
-}
-
-/* VÍDEOS */
-
-.video-carousel{
-    display:flex;
-    gap:25px;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    padding:10px 0 25px;
-}
-
-.video-slide{
-    min-width:100%;
-    scroll-snap-align:center;
-}
-
-.video-container{
-    position:relative;
-    width:100%;
-    max-width:1100px;
-    margin:auto;
-    padding-bottom:56.25%;
-    height:0;
-    overflow:hidden;
-    border-radius:25px;
-    box-shadow:0 0 35px rgba(0,255,136,.18);
-}
-
-.video-container iframe{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    border:none;
-}
-
-.video-hint{
-    margin-top:15px;
-    color:#aaa;
-    font-size:15px;
-}
-
-/* GALERIA */
-
-.galeria{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-}
-
-.galeria img{
-    width:100%;
-    height:280px;
-    object-fit:cover;
-    border-radius:20px;
-    transition:.4s;
-    cursor:pointer;
-    border:2px solid #111;
-}
-
-.galeria img:hover{
-    transform:scale(1.03);
-    border-color:#00ff88;
-    box-shadow:0 0 25px rgba(0,255,136,.25);
-}
-
-/* MODAL IMAGEM */
-
-.modal{
-    display:none;
-    position:fixed;
-    z-index:9999;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.95);
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-}
-
-.modal img{
-    max-width:95%;
-    max-height:95%;
-    border-radius:20px;
-}
-
-.fechar{
-    position:absolute;
-    top:20px;
-    right:35px;
-    color:white;
-    font-size:45px;
-    cursor:pointer;
-}
-
-/* MODAL SERVIÇO */
-
-.modal-servico{
-    display:none;
-    position:fixed;
-    z-index:9999;
-    inset:0;
-    background:rgba(0,0,0,.94);
-    justify-content:center;
-    align-items:center;
-    padding:25px;
-}
-
-.conteudo-servico{
-    background:rgba(15,15,15,.96);
-    border:1px solid #00ff88;
-    border-radius:25px;
-    max-width:900px;
-    max-height:90vh;
-    overflow-y:auto;
-    padding:40px;
-    text-align:left;
-    box-shadow:0 0 35px rgba(0,255,136,.25);
-}
-
-.conteudo-servico h2{
-    color:#00ff88;
-    font-size:36px;
-    margin-bottom:25px;
-    text-align:center;
-}
-
-.conteudo-servico p{
-    color:#ddd;
-    font-size:18px;
-    margin-bottom:18px;
-}
-
-.fechar-servico{
-    float:right;
-    font-size:38px;
-    color:white;
-    cursor:pointer;
-}
-
-.contact p{
-    margin-bottom:30px;
-}
-
-footer{
-    background:rgba(0,0,0,.9);
-    text-align:center;
-    padding:25px;
-    color:#777;
-}
-
-/* REDES SOCIAIS */
-
-.social-icons{
-    position:fixed;
-    right:18px;
-    bottom:18px;
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    z-index:999;
-}
-
-.social-icons a{
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 0 20px rgba(0,0,0,.35);
-    transition:.3s;
-}
-
-.social-icons a:hover{
-    transform:scale(1.08);
-}
-
-.social-icons img{
-    width:34px;
-    height:34px;
-}
-
-.whatsapp-btn{
-    background:#25D366;
-}
-
-.instagram-btn{
-    background:linear-gradient(45deg,#833AB4,#E1306C,#F77737);
-}
-
-/* RESPONSIVO */
-
-@media(max-width:700px){
-    h1{
-        font-size:42px;
-    }
-
-    .hero p{
-        font-size:19px;
-    }
-
-    section{
-        padding:70px 6%;
-    }
-
-    .section-title h2,
-    .highlight h2,
-    .contact h2{
-        font-size:32px;
-    }
-
-    .galeria img{
-        height:230px;
-    }
-
-    .social-icons a{
-        width:55px;
-        height:55px;
-    }
-
-    .social-icons img{
-        width:30px;
-        height:30px;
-    }
-
-    .video-hint{
-        font-size:14px;
-    }
-
-    .conteudo-servico{
-        padding:28px;
-    }
-
-    .conteudo-servico h2{
-        font-size:30px;
-    }
-
-    .conteudo-servico p{
-        font-size:16px;
-    }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPAC Soluções Prediais</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- =====================
+     HEADER
+     ===================== -->
 <header>
-<div class="hero">
-
-<div class="logo-text">SPAC SOLUÇÕES PREDIAIS</div>
-
-<h1>
-Serviços em altura com
-<span>segurança, técnica e qualidade</span>
-</h1>
-
-<p>
-Especialistas em acesso por cordas,
-pintura predial, reparo em fachadas
-e inspeção de pastilhas.
-</p>
-
-<a class="btn" href="https://wa.me/5522999495282" target="_blank">
-Solicitar orçamento
-</a>
-
-</div>
+  <div class="hero">
+    <div class="logo-text">SPAC SOLUÇÕES PREDIAIS</div>
+    <h1>Serviços em altura com <span>segurança, técnica e qualidade</span></h1>
+    <p>Especialistas em acesso por cordas, pintura predial, reparo em fachadas e inspeção de pastilhas.</p>
+    <a class="btn" href="https://wa.me/5522999495282" target="_blank">Solicitar orçamento</a>
+  </div>
 </header>
 
+<!-- =====================
+     QUEM SOMOS
+     ===================== -->
 <section class="about">
-<div class="section-title">
-<h2>Quem Somos</h2>
-<p>Profissionalismo em cada detalhe</p>
-</div>
-
-<p>
-A SPAC Soluções Prediais atua com serviços técnicos em fachadas,
-manutenção predial e acesso por cordas,
-oferecendo soluções seguras,
-eficientes e modernas.
-</p>
+  <div class="section-title">
+    <h2>Quem Somos</h2>
+    <p>Profissionalismo em cada detalhe</p>
+  </div>
+  <p>A SPAC Soluções Prediais atua com serviços técnicos em fachadas, manutenção predial e acesso por cordas, oferecendo soluções seguras, eficientes e modernas.</p>
 </section>
 
+<!-- =====================
+     SERVIÇOS
+     ===================== -->
 <section>
-<div class="section-title">
-<h2>Nossos Serviços</h2>
-<p>Soluções completas para fachadas e estruturas prediais</p>
-</div>
+  <div class="section-title">
+    <h2>Nossos Serviços</h2>
+    <p>Soluções completas para fachadas e estruturas prediais</p>
+  </div>
 
-<div class="services">
-
-<div class="card" onclick="abrirServicoPintura()">
-<h3>Pintura Predial</h3>
-<p>Execução de pintura em fachadas com acabamento profissional e segurança.</p>
-</div>
-
-<div class="card">
-<h3>Pintura em Altura</h3>
-<p>Serviços realizados com técnicas de acesso por cordas e equipe especializada.</p>
-</div>
-
-<div class="card">
-<h3>Reparo em Fachadas</h3>
-<p>Correções, recuperação e manutenção de áreas externas de edificações.</p>
-</div>
-
-<div class="card">
-<h3>Inspeção de Pastilhas</h3>
-<p>Verificação técnica de revestimentos, identificação de falhas e riscos.</p>
-</div>
-
-<div class="card">
-<h3>Instalação de Área Técnica em Fachada</h3>
-<p>Instalação segura e planejada de estruturas técnicas em fachadas prediais.</p>
-</div>
-
-<div class="card">
-<h3>Limpeza de Placas Solares</h3>
-<p>Limpeza técnica especializada para maior eficiência e desempenho dos painéis solares.</p>
-</div>
-
-</div>
+  <div class="services">
+    <div class="card" onclick="abrirServico('pintura-predial')">
+      <h3>Pintura Predial</h3>
+      <p>Execução de pintura em fachadas com acabamento profissional e segurança.</p>
+    </div>
+    <div class="card" onclick="abrirServico('pintura-altura')">
+      <h3>Pintura em Altura</h3>
+      <p>Serviços realizados com técnicas de acesso por cordas e equipe especializada.</p>
+    </div>
+    <div class="card" onclick="abrirServico('reparo-fachadas')">
+      <h3>Reparo em Fachadas</h3>
+      <p>Correções, recuperação e manutenção de áreas externas de edificações.</p>
+    </div>
+    <div class="card" onclick="abrirServico('inspecao-pastilhas')">
+      <h3>Inspeção de Pastilhas</h3>
+      <p>Verificação técnica de revestimentos, identificação de falhas e riscos.</p>
+    </div>
+    <div class="card" onclick="abrirServico('area-tecnica')">
+      <h3>Instalação de Área Técnica em Fachada</h3>
+      <p>Instalação segura e planejada de estruturas técnicas em fachadas prediais.</p>
+    </div>
+    <div class="card" onclick="abrirServico('placas-solares')">
+      <h3>Limpeza de Placas Solares</h3>
+      <p>Limpeza técnica especializada para maior eficiência e desempenho dos painéis solares.</p>
+    </div>
+  </div>
 </section>
 
+<!-- =====================
+     DESTAQUE
+     ===================== -->
 <section class="highlight">
-<h2>Segurança em primeiro lugar</h2>
-<p>
-Trabalhamos com foco em planejamento,
-prevenção de riscos, produtividade e excelência.
-</p>
+  <h2>Segurança em primeiro lugar</h2>
+  <p>Trabalhamos com foco em planejamento, prevenção de riscos, produtividade e excelência.</p>
 </section>
 
+<!-- =====================
+     VÍDEOS
+     ===================== -->
 <section class="video-section">
-<div class="section-title">
-<h2>SPAC em Ação</h2>
-<p>Arraste para o lado e conheça nossos vídeos</p>
-</div>
+  <div class="section-title">
+    <h2>SPAC em Ação</h2>
+    <p>Arraste para o lado e conheça nossos vídeos</p>
+  </div>
 
-<div class="video-carousel">
+  <div class="video-carousel">
+    <div class="video-slide">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/7DtNOOms29A?si=UY5OcyX723ybbJhn"
+          title="SPAC Soluções Prediais - Vídeo 1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="video-slide">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/hF9a2cbF9ts?si=gz9KHvT2afDf9IRC"
+          title="SPAC Soluções Prediais - Vídeo 2"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="video-slide">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/qi-Nr5bJmZ0?si=TJyukkkfwVd8EE-v"
+          title="SPAC Soluções Prediais - Vídeo 3"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
-<div class="video-slide">
-<div class="video-container">
-<iframe
-src="https://www.youtube.com/embed/7DtNOOms29A?si=UY5OcyX723ybbJhn"
-title="SPAC Soluções Prediais - Vídeo 1"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-</div>
-</div>
-
-<div class="video-slide">
-<div class="video-container">
-<iframe
-src="https://www.youtube.com/embed/hF9a2cbF9ts?si=gz9KHvT2afDf9IRC"
-title="SPAC Soluções Prediais - Vídeo 2"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-</div>
-</div>
-
-<div class="video-slide">
-<div class="video-container">
-<iframe
-src="https://www.youtube.com/embed/qi-Nr5bJmZ0?si=TJyukkkfwVd8EE-v"
-title="SPAC Soluções Prediais - Vídeo 3"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-</div>
-</div>
-
-</div>
-
-<p class="video-hint">
-No celular, arraste para o lado para assistir os vídeos.
-</p>
+  <p class="video-hint">No celular, arraste para o lado para assistir os vídeos.</p>
 </section>
 
+<!-- =====================
+     GALERIA
+     ===================== -->
 <section>
-<div class="section-title">
-<h2>Galeria de Serviços</h2>
-<p>Alguns registros reais das atividades da SPAC</p>
-</div>
+  <div class="section-title">
+    <h2>Galeria de Serviços</h2>
+    <p>Alguns registros reais das atividades da SPAC</p>
+  </div>
 
-<div class="galeria">
-<img src="imagens/foto1.jpeg" onclick="abrirImagem(this.src)">
-<img src="imagens/foto2.jpeg" onclick="abrirImagem(this.src)">
-<img src="imagens/foto3.jpeg" onclick="abrirImagem(this.src)">
-<img src="imagens/foto4.jpeg" onclick="abrirImagem(this.src)">
-<img src="imagens/foto5.png" onclick="abrirImagem(this.src)">
-<img src="imagens/foto6.jpeg" onclick="abrirImagem(this.src)">
-<img src="imagens/foto7.jpeg" onclick="abrirImagem(this.src)">
-<img src="imagens/foto8.jpeg" onclick="abrirImagem(this.src)">
-<img src="imagens/foto9.jpeg" onclick="abrirImagem(this.src)">
-<img src="imagens/foto10.jpeg" onclick="abrirImagem(this.src)">
-</div>
+  <div class="galeria">
+    <img src="imagens/foto1.jpeg"  alt="Serviço SPAC 1"  onclick="abrirImagem(this.src)">
+    <img src="imagens/foto2.jpeg"  alt="Serviço SPAC 2"  onclick="abrirImagem(this.src)">
+    <img src="imagens/foto3.jpeg"  alt="Serviço SPAC 3"  onclick="abrirImagem(this.src)">
+    <img src="imagens/foto4.jpeg"  alt="Serviço SPAC 4"  onclick="abrirImagem(this.src)">
+    <img src="imagens/foto5.png"   alt="Serviço SPAC 5"  onclick="abrirImagem(this.src)">
+    <img src="imagens/foto6.jpeg"  alt="Serviço SPAC 6"  onclick="abrirImagem(this.src)">
+    <img src="imagens/foto7.jpeg"  alt="Serviço SPAC 7"  onclick="abrirImagem(this.src)">
+    <img src="imagens/foto8.jpeg"  alt="Serviço SPAC 8"  onclick="abrirImagem(this.src)">
+    <img src="imagens/foto9.jpeg"  alt="Serviço SPAC 9"  onclick="abrirImagem(this.src)">
+    <img src="imagens/foto10.jpeg" alt="Serviço SPAC 10" onclick="abrirImagem(this.src)">
+  </div>
 </section>
 
+<!-- =====================
+     CONTATO
+     ===================== -->
 <section class="contact">
-<h2>Solicite seu orçamento</h2>
-
-<p>
-Fale com a SPAC Soluções Prediais
-e receba atendimento personalizado.
-</p>
-
-<a class="btn" href="https://wa.me/5522999495282" target="_blank">
-Chamar no WhatsApp
-</a>
+  <h2>Solicite seu orçamento</h2>
+  <p>Fale com a SPAC Soluções Prediais e receba atendimento personalizado.</p>
+  <a class="btn" href="https://wa.me/5522999495282" target="_blank">Chamar no WhatsApp</a>
 </section>
 
+<!-- =====================
+     FOOTER
+     ===================== -->
 <footer>
-© 2026 SPAC Soluções Prediais
+  © 2026 SPAC Soluções Prediais
 </footer>
 
+<!-- =====================
+     REDES SOCIAIS
+     ===================== -->
 <div class="social-icons">
-
-<a class="whatsapp-btn" href="https://wa.me/5522999495282" target="_blank">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-</a>
-
-<a class="instagram-btn" href="https://www.instagram.com/spacsolucoes/" target="_blank">
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
-</a>
-
+  <a class="whatsapp-btn" href="https://wa.me/5522999495282" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+  <a class="instagram-btn" href="https://www.instagram.com/spacsolucoes/" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+  </a>
 </div>
 
-<div id="modal" class="modal" onclick="fecharImagem()">
-<span class="fechar">&times;</span>
-<img id="imagem-ampliada">
+<!-- =====================
+     MODAL — IMAGEM
+     ===================== -->
+<div id="modal-imagem" class="modal" onclick="fecharImagem()">
+  <span class="fechar">&times;</span>
+  <img id="imagem-ampliada" alt="Imagem ampliada">
 </div>
 
-<div id="modal-pintura" class="modal-servico">
-<div class="conteudo-servico">
-<span class="fechar-servico" onclick="fecharServicoPintura()">&times;</span>
+<!-- =====================
+     MODAIS — SERVIÇOS
+     ===================== -->
 
-<h2>Pintura Predial</h2>
-
-<p>
-A pintura predial é fundamental para a proteção, conservação e valorização do imóvel. Além de renovar a estética da edificação, a pintura funciona como uma camada de proteção contra sol, chuva, umidade e desgaste natural do tempo.
-</p>
-
-<p>
-Uma pintura bem executada transmite modernidade, cuidado e credibilidade, deixando o ambiente mais agradável e sofisticado. Também contribui para a preservação das superfícies, prevenindo rachaduras, infiltrações e deteriorações estruturais.
-</p>
-
-<p>
-Manter a pintura em dia valoriza o patrimônio, melhora a aparência do prédio e demonstra compromisso com qualidade, segurança e conservação. Seja em áreas internas ou externas, investir em pintura predial é investir na durabilidade e na boa imagem do seu imóvel.
-</p>
-
-</div>
+<!-- 1. Pintura Predial -->
+<div id="modal-pintura-predial" class="modal-servico">
+  <div class="conteudo-servico">
+    <span class="fechar-servico" onclick="fecharServico('pintura-predial')">&times;</span>
+    <h2>Pintura Predial</h2>
+    <p>A pintura predial é fundamental para a proteção, conservação e valorização do imóvel. Além de renovar a estética da edificação, a pintura funciona como uma camada de proteção contra sol, chuva, umidade e desgaste natural do tempo.</p>
+    <p>Uma pintura bem executada transmite modernidade, cuidado e credibilidade, deixando o ambiente mais agradável e sofisticado. Também contribui para a preservação das superfícies, prevenindo rachaduras, infiltrações e deteriorações estruturais.</p>
+    <p>Manter a pintura em dia valoriza o patrimônio, melhora a aparência do prédio e demonstra compromisso com qualidade, segurança e conservação. Seja em áreas internas ou externas, investir em pintura predial é investir na durabilidade e na boa imagem do seu imóvel.</p>
+  </div>
 </div>
 
-<script>
-function abrirImagem(src){
-    document.getElementById("modal").style.display="flex";
-    document.getElementById("imagem-ampliada").src=src;
-}
+<!-- 2. Pintura em Altura -->
+<div id="modal-pintura-altura" class="modal-servico">
+  <div class="conteudo-servico">
+    <span class="fechar-servico" onclick="fecharServico('pintura-altura')">&times;</span>
+    <h2>Pintura em Altura</h2>
+    <p>A pintura em altura é executada por profissionais certificados em técnicas de acesso por cordas (rapel industrial), eliminando a necessidade de andaimes tradicionais e reduzindo custos e tempo de execução.</p>
+    <p>Nossa equipe utiliza equipamentos de proteção individual (EPI) homologados, seguindo rigorosamente as normas de segurança NR-35 (Trabalho em Altura) e NR-18 (Segurança na Construção Civil).</p>
+    <p>Essa modalidade é ideal para edifícios de médio e grande porte, torres, reservatórios e estruturas de difícil acesso, garantindo acabamento profissional em qualquer ponto da fachada.</p>
+  </div>
+</div>
 
-function fecharImagem(){
-    document.getElementById("modal").style.display="none";
-}
+<!-- 3. Reparo em Fachadas -->
+<div id="modal-reparo-fachadas" class="modal-servico">
+  <div class="conteudo-servico">
+    <span class="fechar-servico" onclick="fecharServico('reparo-fachadas')">&times;</span>
+    <h2>Reparo em Fachadas</h2>
+    <p>Com o tempo, fachadas sofrem desgaste natural: fissuras, trincas, bolhas, descolamento de revestimentos e infiltrações são problemas comuns que, se ignorados, evoluem para danos estruturais sérios.</p>
+    <p>A SPAC realiza diagnóstico completo da fachada, identificando todas as patologias antes de iniciar qualquer intervenção. O reparo é feito com produtos e técnicas adequados para cada tipo de problema, garantindo durabilidade na correção.</p>
+    <p>Investir em reparo preventivo é sempre mais econômico do que uma recuperação estrutural emergencial. Cuidar da fachada protege o patrimônio e garante a segurança de moradores e transeuntes.</p>
+  </div>
+</div>
 
-function abrirServicoPintura(){
-    document.getElementById("modal-pintura").style.display="flex";
-}
+<!-- 4. Inspeção de Pastilhas -->
+<div id="modal-inspecao-pastilhas" class="modal-servico">
+  <div class="conteudo-servico">
+    <span class="fechar-servico" onclick="fecharServico('inspecao-pastilhas')">&times;</span>
+    <h2>Inspeção de Pastilhas</h2>
+    <p>O descolamento de pastilhas e revestimentos cerâmicos em fachadas é um dos riscos mais sérios em edificações urbanas, podendo causar acidentes graves com pedestres e veículos.</p>
+    <p>Nossa inspeção técnica utiliza percussão manual e visual sistemática em toda a extensão da fachada, mapeando áreas com som cavo, trincas ou sinais de descolamento iminente. O resultado é um laudo detalhado com a situação de cada área.</p>
+    <p>Após a inspeção, oferecemos o serviço de recolagem, substituição de peças e rejuntamento, devolvendo a segurança e a estética original da fachada.</p>
+  </div>
+</div>
 
-function fecharServicoPintura(){
-    document.getElementById("modal-pintura").style.display="none";
-}
-</script>
+<!-- 5. Instalação de Área Técnica -->
+<div id="modal-area-tecnica" class="modal-servico">
+  <div class="conteudo-servico">
+    <span class="fechar-servico" onclick="fecharServico('area-tecnica')">&times;</span>
+    <h2>Instalação de Área Técnica em Fachada</h2>
+    <p>A instalação de estruturas técnicas em fachadas — como suportes de equipamentos, bandejas, trilhos, fixações e ancoragens — exige planejamento rigoroso e profissionais habilitados para trabalho em altura.</p>
+    <p>A SPAC executa esse serviço com avaliação prévia das condições estruturais da fachada, seleção de fixações compatíveis com o substrato e execução segura por técnicos certificados em acesso por cordas.</p>
+    <p>Todas as instalações são realizadas com materiais de alta qualidade, garantindo resistência, segurança e durabilidade, mesmo em ambientes expostos a intempéries.</p>
+  </div>
+</div>
+
+<!-- 6. Limpeza de Placas Solares -->
+<div id="modal-placas-solares" class="modal-servico">
+  <div class="conteudo-servico">
+    <span class="fechar-servico" onclick="fecharServico('placas-solares')">&times;</span>
+    <h2>Limpeza de Placas Solares</h2>
+    <p>Painéis solares sujos podem perder entre 20% e 30% da eficiência energética. Poeira, fuligem, fezes de pássaros e resíduos orgânicos formam uma camada que bloqueia a incidência solar e reduz significativamente a geração de energia.</p>
+    <p>A SPAC realiza a limpeza técnica especializada com produtos adequados para superfícies fotovoltaicas, sem risco de danos ao vidro temperado ou às células solares. Nossos técnicos acessam as placas com segurança, mesmo em telhados e estruturas elevadas.</p>
+    <p>Manter os painéis limpos prolonga a vida útil do sistema, mantém a garantia do fabricante e maximiza o retorno do investimento em energia solar.</p>
+  </div>
+</div>
+
+<!-- =====================
+     SCRIPTS
+     ===================== -->
+<script src="script.js"></script>
 
 </body>
 </html>
