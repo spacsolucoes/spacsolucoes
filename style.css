@@ -105,12 +105,20 @@ section { padding: 90px 8%; }
   font-size: 18px;
 }
 
-.highlight,
 .video-section,
 .contact {
   background: var(--bg-dark);
   backdrop-filter: blur(3px);
   text-align: center;
+}
+
+.highlight {
+  text-align: center;
+  background:
+    linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.72)),
+    url("imagens/foto-13.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .about {
