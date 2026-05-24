@@ -173,8 +173,66 @@
      FOOTER
      ===================== -->
 <footer>
-  © 2026 SPAC Soluções Prediais
+  <div class="footer-selos">
+    <p class="footer-selos-titulo">Associações e Certificações</p>
+    <div class="footer-selos-grid">
+      <a href="https://www.iratabrasil.org.br/" target="_blank" rel="noopener">
+        <img src="imagens/irata.png" alt="IRATA Brasil">
+      </a>
+      <a href="https://aneac.com.br/" target="_blank" rel="noopener">
+        <img src="imagens/aneac.png" alt="ANEAC">
+      </a>
+      <a href="https://trilhaserumos.com.br/" target="_blank" rel="noopener">
+        <img src="imagens/trilhas.png" alt="Trilhas & Rumos">
+      </a>
+      <a href="https://www1.abendi.org.br/" target="_blank" rel="noopener">
+        <img src="imagens/abendi.png" alt="Abendi">
+      </a>
+    </div>
+  </div>
+  <p>© 2026 SPAC Soluções Prediais</p>
 </footer>
+
+<style>
+.footer-selos {
+  margin-bottom: 25px;
+}
+
+.footer-selos-titulo {
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #00aa55;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.footer-selos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-selos-grid a {
+  display: inline-block;
+  transition: .3s;
+  opacity: 0.8;
+}
+
+.footer-selos-grid a:hover {
+  opacity: 1;
+  transform: scale(1.07);
+}
+
+.footer-selos-grid img {
+  height: 60px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+</style>
 
 <!-- =====================
      REDES SOCIAIS
