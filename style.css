@@ -358,6 +358,17 @@ footer {
   color: #777;
 }
 
+footer a img {
+  max-width: 120px;
+  border-radius: 8px;
+  opacity: 0.85;
+  transition: opacity .3s;
+}
+
+footer a img:hover {
+  opacity: 1;
+}
+
 /* =====================
    REDES SOCIAIS (FIXAS)
    ===================== */
