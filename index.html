@@ -161,20 +161,6 @@
 </section>
 
 <!-- =====================
-     CONTADOR DE VISITAS
-     ===================== -->
-<section style="padding:50px 8%;text-align:center;background:#0a0a0a;">
-  <div id="contador-painel" style="display:inline-flex;flex-direction:column;align-items:center;gap:14px;background:#0d0d0d;border:1px solid #1a1a1a;border-radius:16px;padding:22px 36px;">
-    <span style="font-family:monospace;font-size:11px;letter-spacing:4px;color:#00aa55;text-transform:uppercase;">
-      <span id="contador-led" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00ff88;margin-right:6px;vertical-align:middle;"></span>
-      visitas totais
-    </span>
-    <div id="contador-digitos" style="display:flex;gap:4px;align-items:center;"></div>
-    <span style="font-family:monospace;font-size:10px;letter-spacing:3px;color:#00ff88;opacity:0.35;text-transform:uppercase;">spacsolucoes.com.br</span>
-  </div>
-</section>
-
-<!-- =====================
      CONTATO
      ===================== -->
 <section class="contact">
@@ -183,9 +169,6 @@
   <a class="btn" href="https://wa.me/5522999495282" target="_blank">Chamar no WhatsApp</a>
 </section>
 
-<!-- =====================
-     FOOTER
-     ===================== -->
 <!-- =====================
      TRABALHE CONOSCO
      ===================== -->
@@ -196,7 +179,12 @@
     Enviar Currículo
   </a>
 </section>
-  © 2026 SPAC Soluções Prediais
+
+<!-- =====================
+     FOOTER
+     ===================== -->
+<footer>
+  <div>© 2026 SPAC Soluções Prediais — By RasgaBuxosss</div>
   <div style="margin-top:20px; display:flex; flex-direction:column; align-items:center; gap:10px;">
     <span style="font-family:monospace; font-size:11px; letter-spacing:4px; color:#00aa55; opacity:0.7; text-transform:uppercase;">● visitas totais</span>
     <div id="odometro" style="display:flex; gap:4px; align-items:center;"></div>
@@ -247,7 +235,6 @@
   var KEY = 'spac_visitas_v2';
   var count = parseInt(localStorage.getItem(KEY) || '0') + 1;
   localStorage.setItem(KEY, count);
-
   var s = String(count).padStart(6, '0');
   var el = document.getElementById('odometro');
   el.innerHTML = '';
