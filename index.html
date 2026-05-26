@@ -161,6 +161,20 @@
 </section>
 
 <!-- =====================
+     CONTADOR DE VISITAS
+     ===================== -->
+<section style="padding:50px 8%;text-align:center;background:#0a0a0a;">
+  <div id="contador-painel" style="display:inline-flex;flex-direction:column;align-items:center;gap:14px;background:#0d0d0d;border:1px solid #1a1a1a;border-radius:16px;padding:22px 36px;">
+    <span style="font-family:monospace;font-size:11px;letter-spacing:4px;color:#00aa55;text-transform:uppercase;">
+      <span id="contador-led" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00ff88;margin-right:6px;vertical-align:middle;"></span>
+      visitas totais
+    </span>
+    <div id="contador-digitos" style="display:flex;gap:4px;align-items:center;"></div>
+    <span style="font-family:monospace;font-size:10px;letter-spacing:3px;color:#00ff88;opacity:0.35;text-transform:uppercase;">spacsolucoes.com.br</span>
+  </div>
+</section>
+
+<!-- =====================
      CONTATO
      ===================== -->
 <section class="contact">
@@ -172,64 +186,85 @@
 <!-- =====================
      FOOTER
      ===================== -->
-<footer>
-  <div class="footer-selos">
-    <p class="footer-selos-titulo">Certificações</p>
-    <div class="footer-selos-grid">
-      <a href="https://www.iratabrasil.org.br/" target="_blank" rel="noopener">
-        <img src="imagens/irata.png" alt="IRATA Brasil">
-      </a>
-      <a href="https://aneac.com.br/" target="_blank" rel="noopener">
-        <img src="imagens/aneac.png" alt="ANEAC">
-      </a>
-            <a href="https://www1.abendi.org.br/" target="_blank" rel="noopener">
-        <img src="imagens/abendi.png" alt="Abendi">
-      </a>
-    </div>
+<!-- =====================
+     TRABALHE CONOSCO
+     ===================== -->
+<section class="trabalhe">
+  <h2>Trabalhe Conosco</h2>
+  <p>Faça parte do time SPAC. Envie seu currículo e venha crescer com a gente.</p>
+  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdWnTQ6r9HazaGR8LpN6IMrhVZT4A57LkPSyRiwexMUdKFtYw/viewform?usp=header" target="_blank">
+    Enviar Currículo
+  </a>
+</section>
+  © 2026 SPAC Soluções Prediais
+  <div style="margin-top:20px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+    <span style="font-family:monospace; font-size:11px; letter-spacing:4px; color:#00aa55; opacity:0.7; text-transform:uppercase;">● visitas totais</span>
+    <div id="odometro" style="display:flex; gap:4px; align-items:center;"></div>
+    <span style="font-family:monospace; font-size:10px; letter-spacing:3px; color:#00ff88; opacity:0.35; text-transform:uppercase;">spacsolucoes.com.br</span>
   </div>
-  <p>© 2026 SPAC Soluções Prediais</p>
+  <div style="display:none;">
+    <a href="https://info.flagcounter.com/U7vq">
+      <img src="https://s01.flagcounter.com/count2/U7vq/bg_0A0A0A/txt_00FF88/border_111111/columns_1/maxflags_0/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0">
+    </a>
+  </div>
 </footer>
 
 <style>
-.footer-selos {
-  margin-bottom: 25px;
-}
-
-.footer-selos-titulo {
-  font-family: monospace;
-  font-size: 11px;
-  letter-spacing: 4px;
-  color: #00aa55;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
-
-.footer-selos-grid {
+.digito-painel {
+  background: #0d0d0d;
+  border: 1px solid #1e1e1e;
+  border-radius: 6px;
+  width: 38px;
+  height: 56px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-size: 30px;
+  font-weight: bold;
+  color: #00ff88;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.9);
+  position: relative;
 }
-
-.footer-selos-grid a {
-  display: inline-block;
-  transition: .3s;
-  opacity: 0.8;
+.digito-painel::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 4px; right: 4px;
+  height: 1px;
+  background: rgba(0,255,136,0.15);
 }
-
-.footer-selos-grid a:hover {
-  opacity: 1;
-  transform: scale(1.07);
-}
-
-.footer-selos-grid img {
-  height: 60px;
-  width: auto;
-  border-radius: 8px;
-  object-fit: contain;
+.sep-painel {
+  font-family: monospace;
+  font-size: 20px;
+  color: #00aa55;
+  opacity: 0.5;
+  margin: 0 2px;
 }
 </style>
+
+<script>
+(function(){
+  var KEY = 'spac_visitas_v2';
+  var count = parseInt(localStorage.getItem(KEY) || '0') + 1;
+  localStorage.setItem(KEY, count);
+
+  var s = String(count).padStart(6, '0');
+  var el = document.getElementById('odometro');
+  el.innerHTML = '';
+  s.split('').forEach(function(d, i){
+    if(i === 3){
+      var sep = document.createElement('span');
+      sep.className = 'sep-painel';
+      sep.textContent = '·';
+      el.appendChild(sep);
+    }
+    var div = document.createElement('div');
+    div.className = 'digito-painel';
+    div.textContent = d;
+    el.appendChild(div);
+  });
+})();
+</script>
 
 <!-- =====================
      REDES SOCIAIS
