@@ -349,6 +349,28 @@ section { padding: 90px 8%; }
 .contact p { margin-bottom: 30px; }
 
 /* =====================
+   TRABALHE CONOSCO
+   ===================== */
+.trabalhe {
+  text-align: center;
+  background: var(--bg-dark);
+  backdrop-filter: blur(3px);
+}
+
+.trabalhe h2 {
+  font-size: 42px;
+  color: var(--verde);
+  margin-bottom: 20px;
+}
+
+.trabalhe p {
+  max-width: 850px;
+  margin: auto auto 30px;
+  font-size: 20px;
+  color: var(--text-muted);
+}
+
+/* =====================
    FOOTER
    ===================== */
 footer {
