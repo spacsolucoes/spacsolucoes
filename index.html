@@ -172,86 +172,24 @@
 <!-- =====================
      TRABALHE CONOSCO
      ===================== -->
-<section class="trabalhe">
-  <h2>Trabalhe Conosco</h2>
-  <p>Faça parte do time SPAC. Envie seu currículo e venha crescer com a gente.</p>
-  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdWnTQ6r9HazaGR8LpN6IMrhVZT4A57LkPSyRiwexMUdKFtYw/viewform?usp=header" target="_blank">
-    Enviar Currículo
-  </a>
-</section>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdWnTQ6r9HazaGR8LpN6IMrhVZT4A57LkPSyRiwexMUdKFtYw/viewform?usp=header" target="_blank" style="text-decoration:none;">
+  <section class="trabalhe">
+    <h2>Trabalhe Conosco</h2>
+    <p>Faça parte do time SPAC. Envie seu currículo e venha crescer com a gente.</p>
+  </section>
+</a>
 
 <!-- =====================
      FOOTER
      ===================== -->
 <footer>
   <div>© 2026 SPAC Soluções Prediais — By RasgaBuxosss</div>
-  <div style="margin-top:20px; display:flex; flex-direction:column; align-items:center; gap:10px;">
-    <span style="font-family:monospace; font-size:11px; letter-spacing:4px; color:#00aa55; opacity:0.7; text-transform:uppercase;">● visitas totais</span>
-    <div id="odometro" style="display:flex; gap:4px; align-items:center;"></div>
-    <span style="font-family:monospace; font-size:10px; letter-spacing:3px; color:#00ff88; opacity:0.35; text-transform:uppercase;">spacsolucoes.com.br</span>
-  </div>
   <div style="display:none;">
     <a href="https://info.flagcounter.com/U7vq">
       <img src="https://s01.flagcounter.com/count2/U7vq/bg_0A0A0A/txt_00FF88/border_111111/columns_1/maxflags_0/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0">
     </a>
   </div>
 </footer>
-
-<style>
-.digito-painel {
-  background: #0d0d0d;
-  border: 1px solid #1e1e1e;
-  border-radius: 6px;
-  width: 38px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Courier New', monospace;
-  font-size: 30px;
-  font-weight: bold;
-  color: #00ff88;
-  box-shadow: inset 0 2px 8px rgba(0,0,0,0.9);
-  position: relative;
-}
-.digito-painel::after {
-  content: '';
-  position: absolute;
-  top: 50%; left: 4px; right: 4px;
-  height: 1px;
-  background: rgba(0,255,136,0.15);
-}
-.sep-painel {
-  font-family: monospace;
-  font-size: 20px;
-  color: #00aa55;
-  opacity: 0.5;
-  margin: 0 2px;
-}
-</style>
-
-<script>
-(function(){
-  var KEY = 'spac_visitas_v2';
-  var count = parseInt(localStorage.getItem(KEY) || '0') + 1;
-  localStorage.setItem(KEY, count);
-  var s = String(count).padStart(6, '0');
-  var el = document.getElementById('odometro');
-  el.innerHTML = '';
-  s.split('').forEach(function(d, i){
-    if(i === 3){
-      var sep = document.createElement('span');
-      sep.className = 'sep-painel';
-      sep.textContent = '·';
-      el.appendChild(sep);
-    }
-    var div = document.createElement('div');
-    div.className = 'digito-painel';
-    div.textContent = d;
-    el.appendChild(div);
-  });
-})();
-</script>
 
 <!-- =====================
      REDES SOCIAIS
