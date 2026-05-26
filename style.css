@@ -355,6 +355,12 @@ section { padding: 90px 8%; }
   text-align: center;
   background: var(--bg-dark);
   backdrop-filter: blur(3px);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.trabalhe:hover {
+  background: rgba(0, 255, 136, 0.05);
 }
 
 .trabalhe h2 {
